@@ -65,11 +65,13 @@ oddOrEven(7);
 oddOrEven(14);
 // 13. Crea una función que reciba un parámetro de tipo string e imprima por consola el string revertido. (ejemplo: 'casa' => 'asac).
 function reverser(yourString) {
-  for (let i = yourString.length; i >= 0; i--) {
-    console.log(yourString[i]);
+  let reversedWord = [];
+  for (let i = yourString.length - 1; i >= 0; i--) {
+    reversedWord.push(yourString[i]);
   }
+  return reversedWord.join('');
 }
-reverser('palíndromo');
+console.log(reverser('palíndromo'));
 // 14. Crea una función que devuelva la tabla de multiplicar de un número introducido como parámetro.
 // LLama a la función desde console.log() para que el resultado se imprima por consola
 
