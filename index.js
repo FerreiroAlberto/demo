@@ -99,10 +99,14 @@ console.log(isPrime(11) ? 'Es primo' : 'No es primo');
 
 // num como parámetro y devulve el factorial de num
 const factorial = (num) => {
-  let result = 1;
-  for (let i = 1; i <= num; i++) {
-    result = result * i;
+  if (num < 0 || num % 1 !== 0) {
+    return `El número ${num} no tiene factorial`;
+  } else {
+    let result = 1;
+    for (let i = 1; i <= num; i++) {
+      result = result * i;
+    }
+    return result;
   }
-  return result;
 };
-console.log(factorial(5));
+console.log(factorial(4));
