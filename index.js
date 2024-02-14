@@ -54,24 +54,23 @@ console.log(getRandomNumber());
 };
 numberGuesser();*/
 // 12. Crea una función que reciba un número como parámetro e imprima por consola si el número dado es par o impar.
-const oddOrEven = (num) => {
-  if (num % 2) {
-    console.log(`El número ${num} es impar`);
-    return;
-  }
-  console.log(`El número ${num} es par`);
+const checkOddOrEven = (num) => {
+  const isEven = () => {
+    return num % 2 === 0;
+  };
+  const result = isEven(num) ? 'Even (Par)' : 'Odd (Impar)';
 };
-oddOrEven(7);
-oddOrEven(14);
+checkOddOrEven(7);
+checkOddOrEven(14);
 // 13. Crea una función que reciba un parámetro de tipo string e imprima por consola el string revertido. (ejemplo: 'casa' => 'asac).
-function reverser(yourString) {
+function reverse(yourString) {
   let reversedWord = [];
   for (let i = yourString.length - 1; i >= 0; i--) {
     reversedWord.push(yourString[i]);
   }
   return reversedWord.join('');
 }
-console.log(reverser('palíndromo'));
+console.log(reverse('palíndromo'));
 // 14. Crea una función que devuelva la tabla de multiplicar de un número introducido como parámetro.
 // LLama a la función desde console.log() para que el resultado se imprima por consola
 
@@ -80,21 +79,30 @@ const multiplicationTable = (num) => {
   for (let i = 0; i < 11; i++) {
     result.push(num * i);
   }
-  return result;
+  return result.join(' ');
 };
 
 console.log(multiplicationTable(5));
 // 15. Crea una función que reciba un número por parámetros y retorne si el número recibido es un número primo.
 // LLama a la función desde console.log() para que el resultado se imprima por consola
 
-const primeNumberFinder = (number) => {
+const isPrime = (number) => {
   for (let i = 2; i < number; i++) {
-    if (number % i !== 0) {
-      return 'El número es primo.';
-    } else {
-      return 'El número no es primo';
+    if (number % i === 0) {
+      return false;
     }
   }
+  return number > 1;
 };
 
-console.log(primeNumberFinder(130));
+console.log(isPrime(11) ? 'Es primo' : 'No es primo');
+
+// num como parámetro y devulve el factorial de num
+const factorial = (num) => {
+  let result = 1;
+  for (let i = 1; i <= num; i++) {
+    result = result * i;
+  }
+  return result;
+};
+console.log(factorial(5));
